@@ -1,0 +1,72 @@
+@font-face {
+    font-family: "ErotiqueAlternate";
+    src: url(./assets/ErotiqueAlternateTrial-Regular.woff) format("woff");
+}
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+a {
+    text-decoration: none;
+}
+.return {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-left: 50px;
+    margin-top: 50px;
+    background-color: black;
+}
+.introwrapper {
+    width: 90%;
+    height: 100%;
+    margin-left: 136px;
+    margin-top: 150px;
+    font-family: Erotique Alternate Trial;
+    font-weight: normal;
+    font-size: 120px;
+    line-height: 125px;
+    color: #000000;
+    z-index: 99;
+}
+#size:hover {
+    color: #FFE5B4;
+}
+#color:hover {
+    color: #FFE5B4;
+}
+#usefulness:hover {
+    color: #FFE5B4;
+}
+.ellipse1 {
+    position: absolute;
+    top: 600px;
+    margin-left: 136px;
+    stroke-dasharray: 630;
+    stroke-dashoffset: 630;
+    fill: none;
+    z-index: 1;
+}
+.ellipse2 {
+    position: absolute;
+    stroke-dasharray: 980;
+    stroke-dashoffset: 980;
+}
+.ellipse3 {
+    position: absolute;
+    stroke-dasharray: 1860;
+    stroke-dashoffset: 1860;
+}
+.animate-ellipse1 {
+    animation: circlesize 2s linear forwards;
+}
+.animate-ellipse2 {
+    animation: circlesize 3s linear forwards;
+}
+.animate-ellipse3 {
+    animation: circlesize 4s linear forwards;
+}
+@keyframes circlesize {
+    to{stroke-dashoffset: 0;}
+}
