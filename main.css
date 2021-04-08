@@ -11,62 +11,118 @@ a {
     text-decoration: none;
 }
 .return {
-    width: 45px;
-    height: 45px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    margin-left: 50px;
-    margin-top: 50px;
+    margin-left: 30px;
+    margin-top: 30px;
     background-color: black;
 }
 .introwrapper {
-    width: 90%;
-    height: 100%;
-    margin-left: 136px;
-    margin-top: 150px;
+    width: 70%;
+    height: auto;
+    margin-left: 30px;
+    margin-top: 110px;
     font-family: Erotique Alternate Trial;
     font-weight: normal;
-    font-size: 120px;
-    line-height: 125px;
-    color: #000000;
-    z-index: 99;
+    font-size: 55px;
+    line-height: 54px;
+    color: black;
+    word-wrap: break-word;
 }
-#size:hover {
-    color: #FFE5B4;
-}
-#color:hover {
-    color: #FFE5B4;
-}
-#usefulness:hover {
-    color: #FFE5B4;
+.introwrapper a {
+    color: black;
 }
 .ellipse1 {
-    position: absolute;
-    top: 600px;
-    margin-left: 136px;
-    stroke-dasharray: 630;
-    stroke-dashoffset: 630;
-    fill: none;
-    z-index: 1;
+    display: none;
 }
 .ellipse2 {
-    position: absolute;
-    stroke-dasharray: 980;
-    stroke-dashoffset: 980;
+    display: none;
 }
 .ellipse3 {
-    position: absolute;
-    stroke-dasharray: 1860;
-    stroke-dashoffset: 1860;
+    display: none;
 }
-.animate-ellipse1 {
-    animation: circlesize 2s linear forwards;
-}
-.animate-ellipse2 {
-    animation: circlesize 3s linear forwards;
-}
-.animate-ellipse3 {
-    animation: circlesize 4s linear forwards;
-}
-@keyframes circlesize {
-    to{stroke-dashoffset: 0;}
+@media only screen and (min-width: 500px) {
+    body {
+        cursor: url("./assets/img/cursor.svg"), auto;
+    }
+    .return {
+        width: 45px;
+        height: 45px;
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+    .introwrapper {
+        width: 90%;
+        margin-left: 136px;
+        margin-top: 150px;
+        font-size: 120px;
+        line-height: 125px;
+    }
+    .introwrapper a {
+        color: black;
+    }
+    #size:hover a {
+        color: #FFE5B4;
+    }
+    #color:hover a {
+        color: #FFE5B4;
+    }
+    #usefulness:hover a {
+        color: #FFE5B4;
+    }
+    .ellipse1 {
+        position: absolute;
+        display: block;
+        top: 585px;
+        margin-left: 0;
+        stroke-dasharray: 630;
+        stroke-dashoffset: 630;
+        fill: none;
+    }
+    .ellipse2 {
+        position: absolute;
+        display: block;
+        left: 450px;
+        top: 600px;
+        stroke-dasharray: 980;
+        stroke-dashoffset: 980;
+        fill: none;
+    }
+    .ellipse3 {
+        position: absolute;
+        display: block;
+        top: 730px;
+        left: 70px;
+        stroke-dasharray: 1860;
+        stroke-dashoffset: 1860;
+        fill: none;
+    }
+    .animate-ellipse1 {
+        animation: circlesize 2s linear forwards;
+    }
+    .animate-ellipse2 {
+        animation: circlesize 3s linear forwards;
+    }
+    .animate-ellipse3 {
+        animation: circlesize 4s linear forwards;
+    }
+    @keyframes circlesize {
+        to{stroke-dashoffset: 0;}
+    }
+    /* size page */
+    .sizewrapper {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    .left-wrapper {
+        margin-top: 80px;
+        width: 50%;
+        height: auto;
+        border: 1px solid black;
+    }
+    .small-img {
+        width: 180px;
+    }
 }

@@ -49,10 +49,24 @@ function consoleLogItems() {
   }
 
   // loop through the airtable, and display them onto our page
-  // loop through the items, create an h2 for each one, and add it to the page
+
 function showItems() {
     console.log("showItems()");
     items.forEach((item) => {
+
+      // adding size genre as a class to the container
+      var itemSize = item.fields.item_size;
+      itemSize.forEach((size) => {
+        
+        if (size == 'small') {
+
+          // display small item img
+          var itemImg = document.createElement("img");
+          itemImg.classList.add("small-img");
+          itemImg.src = item.fields.circle_img[0].url;
+          document.querySelector(".left-wrapper").appendChild(itemImg);
+        }
+      })
 
     });
   }
