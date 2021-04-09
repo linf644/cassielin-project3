@@ -56,17 +56,21 @@ function showItems() {
 
       // adding size genre as a class to the container
       var itemSize = item.fields.item_size;
-      itemSize.forEach((size) => {
-        
-        if (size == 'small') {
 
-          // display small item img
-          var itemImg = document.createElement("img");
-          itemImg.classList.add("small-img");
-          itemImg.src = item.fields.circle_img[0].url;
-          document.querySelector(".left-wrapper").appendChild(itemImg);
-        }
-      })
+      // if items are categorized as small, put them in the left side of the screen
+      if (itemSize === "small") {
+      // adding size genre as a class to the container
+      var itemImg = document.createElement("img");
+              itemImg.classList.add("small-img");
+      itemImg.src = item.fields.circle_img[0].url;
+              document.querySelector(".left-wrapper").appendChild(itemImg);
+      }
+      if (itemSize === "large") {
+        var itemImg = document.createElement("img");
+        itemImg.classList.add("large-img");
+        itemImg.src = item.fields.circle_img[0].url;
+        document.querySelector(".right-wrapper").appendChild(itemImg);
+      }
 
     });
   }

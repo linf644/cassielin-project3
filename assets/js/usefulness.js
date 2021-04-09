@@ -53,6 +53,11 @@ function consoleLogItems() {
 function showItems() {
     console.log("showItems()");
     items.forEach((item) => {
-
+      // getting img from airtable
+      // append them randomly on usefulness page
+      var itemImg = document.createElement("img");
+      itemImg.classList.add("item-img");
+      itemImg.src = item.fields.circle_img[0].url;
+      document.querySelector(".container").appendChild(itemImg);
     });
   }

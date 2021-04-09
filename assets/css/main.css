@@ -42,7 +42,63 @@ a {
 .ellipse3 {
     display: none;
 }
-@media only screen and (min-width: 500px) {
+
+
+/* size page */
+.sizewrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin-top: 40px;
+}
+.left-wrapper {
+    display: grid;
+    margin-top: 2.5rem;
+    grid-auto-flow: column;
+    gap: 4rem;
+    padding-left: 5rem;
+    overflow-x: scroll;
+    width: 100%;
+    height: 40%;
+}
+.left-wrapper::-webkit-scrollbar { 
+    width: 0;
+    display: none; 
+  }
+.dividing-line {
+    position: absolute;
+    top: 52%;
+    left: 0;
+    width: 100vw;
+    height: 1px;
+    background-color: black;
+}
+.right-wrapper {
+    display: grid;
+    margin-top: -5rem;
+    grid-auto-flow: column;
+    gap: 4rem;
+    padding-left: 5rem;
+    overflow-x: scroll;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+}
+.right-wrapper::-webkit-scrollbar { 
+    width: 0;
+    display: none; 
+  }
+.small-img {
+    width: 90px;
+    margin: 0 auto;
+    height: auto;
+}
+.large-img {
+    width: 150px;
+}
+
+@media only screen and (min-width: 600px) {
     body {
         cursor: url("./assets/img/cursor.svg"), auto;
     }
@@ -115,14 +171,53 @@ a {
         display: flex;
         flex-direction: row;
         width: 100%;
+        height: 85%;
+        margin-top: 80px;
     }
     .left-wrapper {
-        margin-top: 80px;
+        margin-top: 0;
+        grid-auto-flow: row;
+        gap: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        overflow-y: auto;
         width: 50%;
-        height: auto;
-        border: 1px solid black;
+        height: 85%;
     }
+    .left-wrapper::-webkit-scrollbar { 
+        width: 0;
+        display: none; 
+      }
+    .dividing-line {
+        position: absolute;
+        top: 0;
+        left: calc(50% - 0.5px);
+        width: 1px;
+        height: 800px;
+        background-color: black;
+    }
+    .right-wrapper {
+        margin-top: 0;
+        grid-auto-flow: row;
+        gap: 0;
+        display: grid;
+        justify-content: center;
+        overflow-y: auto;
+        align-items: center;
+        width: 50%;
+        height: 85%;
+    }
+    .right-wrapper::-webkit-scrollbar { 
+        width: 0;
+        display: none; 
+      }
     .small-img {
         width: 180px;
+        margin: 5rem auto;
+    }
+    .large-img {
+        width: 350px;
+        margin: 5rem;
     }
 }

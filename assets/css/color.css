@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "ErotiqueAlternate";
+    src: url(./assets/ErotiqueAlternateTrial-Regular.woff) format("woff");
+}
+body {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+.container {
+    background-color: #7A7A7A;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+}
+.return {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 30px;
+    margin-top: 30px;
+    background-color: #E5E5E5;
+}
+
+@media only screen and (min-width: 600px) {
+    body {
+        cursor: url("./assets/img/cursor.svg"), auto;
+    }
+    .return {
+        width: 45px;
+        height: 45px;
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+    #red {
+        margin-left: 141px;
+        margin-top: 200px;
+    }
+    .item-img {
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        width: 181px;
+        height: 181px;
+        border-radius: 50%;
+    }
+}
