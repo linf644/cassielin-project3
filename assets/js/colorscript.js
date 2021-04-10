@@ -62,30 +62,100 @@ function showItems() {
       itemImg.classList.add("item-img");
       itemImg.src = item.fields.circle_img[0].url;
       document.querySelector(".container").appendChild(itemImg);
-
       // define variables for the window width and height
       var winWidth = window.innerWidth;
       var winHeight = window.innerHeight;
-
+      var randomElements = document.querySelectorAll(".item-img");
       // this begins a "for loop". this loops through our multiple .random-elements
       // i stands for "index". it's a variable you can name anything but we stick to the common name "i"
-      for (var i = 0; i < itemImg.length; i++) {
+      for (var i = 0; i < randomElements.length; i++) {
         // get random number from top and left of window
         var randomTop = getRandomNumber(0, winHeight);
         var randomLeft = getRandomNumber(0, winWidth);
-
         // update top and left position. we attach [i] after randomElements variable in your for loop
-        itemImg[i].style.top = randomTop + "px";
-        itemImg[i].style.left = randomLeft + "px";
+        randomElements[i].style.top = randomTop + "px";
+        randomElements[i].style.left = randomLeft + "px";
       }
     }
-
     // call function so elements appear random on first page load
     randomizePage();
-
     // function that returns a random number between a min and max
     function getRandomNumber(min, max) {
       return Math.random() * (max - min) + min;
     }
+
+    // define color genre
+    var itemColor = item.fields.color;
+    // define color blob
+    var redBlob = docu.querySelector("#red");
+    var blueBlob = docu.querySelector("#blue");
+    var yellowBlob = docu.querySelector("#yellow");
+    var whiteBlob = docu.querySelector("#white");
+    var blackBlob = docu.querySelector("#black");
+
+    // click the red blob
+    // if item is red, display on the page
+    redBlob.addEvemtListener("click", function(){
+      if (itemColor === "red") {
+        itemImg.src = item.fields.circle_img[0].url;
+        itemImg.classList.add("item-img");
+        itemImg.style.display = "block";
+        document.querySelector(".container").appendChild(itemColor);
+      }
+      else {
+        itemImg.style.display = "none";
+      }
+    })
+        // click the blue blob
+    // if item is blue, display on the page
+    blueBlob.addEvemtListener("click", function(){
+      if (itemColor === "blue") {
+        itemImg.src = item.fields.circle_img[0].url;
+        itemImg.classList.add("item-img");
+        itemImg.style.display = "block";
+        document.querySelector(".container").appendChild(itemColor);}
+        else {
+          itemImg.style.display = "none";
+        }
+    })
+        // click the yellow blob
+    // if item is yellow, display on the page
+    yellowBlob.addEvemtListener("click", function(){
+      if (itemColor === "yellow") {
+        itemImg.src = item.fields.circle_img[0].url;
+        itemImg.classList.add("item-img");
+        itemImg.style.display = "block";
+        document.querySelector(".container").appendChild(itemColor);
+      }
+      else {
+        itemImg.style.display = "none";
+      }
+    })
+        // click the white blob
+    // if item is white, display on the page
+    whiteBlob.addEvemtListener("click", function(){
+      if (itemColor === "red") {
+        itemImg.src = item.fields.circle_img[0].url;
+        itemImg.classList.add("item-img");
+        itemImg.style.display = "block";
+        document.querySelector(".container").appendChild(itemColor);
+      }
+      else {
+        itemImg.style.display = "none";
+      }
+    })
+        // click the black blob
+    // if item is black, display on the page
+    blackBlob.addEvemtListener("click", function(){
+      if (itemColor === "red") {
+        itemImg.src = item.fields.circle_img[0].url;
+        itemImg.classList.add("item-img");
+        itemImg.style.display = "block";
+        document.querySelector(".container").appendChild(itemColor);
+      }
+      else {
+        itemImg.style.display = "none";
+      }
+    })
   });
 }
