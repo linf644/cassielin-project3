@@ -70,8 +70,8 @@ function showItems() {
       // i stands for "index". it's a variable you can name anything but we stick to the common name "i"
       for (var i = 0; i < randomElements.length; i++) {
         // get random number from top and left of window
-        var randomTop = getRandomNumber(0, winHeight);
-        var randomLeft = getRandomNumber(0, winWidth);
+        var randomTop = getRandomNumber(0, winHeight - randomElements[i].offsetHeight);
+        var randomLeft = getRandomNumber(0, winWidth - randomElements[i].offsetWidth);
         // update top and left position. we attach [i] after randomElements variable in your for loop
         randomElements[i].style.top = randomTop + "px";
         randomElements[i].style.left = randomLeft + "px";

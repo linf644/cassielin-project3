@@ -53,11 +53,34 @@ function consoleLogItems() {
 function showItems() {
     console.log("showItems()");
     items.forEach((item) => {
-      // getting img from airtable
-      // append them randomly on usefulness page
-      var itemImg = document.createElement("img");
-      itemImg.classList.add("item-img");
-      itemImg.src = item.fields.circle_img[0].url;
-      document.querySelector(".container").appendChild(itemImg);
+
+      function randomizePage() {
+        // getting img from airtable
+        // append them randomly on usefulness page
+        var itemImg = document.createElement("img");
+        itemImg.classList.add("item-img");
+        itemImg.src = item.fields.circle_img[0].url;
+        document.querySelector(".container").appendChild(itemImg);
+        // define variables for the window width and height
+        var winWidth = window.innerWidth;
+        var winHeight = window.innerHeight;
+        var randomElements = document.querySelectorAll(".item-img");
+        // this begins a "for loop". this loops through our multiple .random-elements
+        // i stands for "index". it's a variable you can name anything but we stick to the common name "i"
+        for (var i = 0; i < randomElements.length; i++) {
+          // get random number from top and left of window
+          var randomTop = getRandomNumber(0, winHeight);
+          var randomLeft = getRandomNumber(0, winWidth);
+          // update top and left position. we attach [i] after randomElements variable in your for loop
+          randomElements[i].style.top = randomTop + "px";
+          randomElements[i].style.left = randomLeft + "px";
+        }
+      }
+      // call function so elements appear random on first page load
+      randomizePage();
+      // function that returns a random number between a min and max
+      function getRandomNumber(min, max) {
+        return Math.random() * (max - min) + min;
+      }
     });
   }

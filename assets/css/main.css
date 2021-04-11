@@ -11,12 +11,14 @@ a {
     text-decoration: none;
 }
 .return {
+    position: absolute;
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    margin-left: 30px;
-    margin-top: 30px;
+    left: 30px;
+    top: 30px;
     background-color: black;
+    z-index: 99;
 }
 .introwrapper {
     width: 70%;
@@ -219,5 +221,14 @@ a {
     .large-img {
         width: 350px;
         margin: 5rem;
+    }
+    /* usefulness page */
+    .item-img {
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        width: 181px;
+        height: 181px;
+        border-radius: 50%;
     }
 }
