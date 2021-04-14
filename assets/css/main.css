@@ -10,6 +10,17 @@ body {
 a {
     text-decoration: none;
 }
+.tab {
+    font-family: Erotique Alternate Trial;
+    font-size: 20px;
+    text-align: right;
+    margin-top: 40px;
+    margin-right: 60px;
+    color: black;
+}
+.tab a {
+    color: black;
+}
 .return {
     position: absolute;
     width: 30px;
@@ -99,10 +110,49 @@ a {
 .large-img {
     width: 150px;
 }
+ /* usefulness page */
+ .main-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.category {
+    margin-top: 4rem;
+    margin-left: 3rem;
+    width: 100%;
+    font-family: Erotique Alternate Trial;
+    font-style: normal;
+    font-size: 35px;
+    color: #000000;
+}
+#useful:hover {
+    cursor: pointer;
+}
+#not-useful:hover {
+    cursor: pointer;
+}
+.usefulness-line {
+    height: 0;
+    width: 115vw;
+    margin-left: 0;
+    margin-top: 60px;
+    border: .2px solid #000000;
+}
+.image-wrapper {
+    position: relative;
+    top: 1.5rem;
+}
+.item-img {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
 
 @media only screen and (min-width: 600px) {
     body {
-        cursor: url("./assets/img/cursor.svg"), auto;
+        cursor: url("/assets/img/cursor.svg"), auto;
     }
     .return {
         width: 45px;
@@ -110,10 +160,21 @@ a {
         margin-left: 50px;
         margin-top: 50px;
     }
+    .tab {
+        font-family: Erotique Alternate Trial;
+        font-size: 40px;
+        text-align: right;
+        margin-top: 80px;
+        margin-right: 50px;
+        color: black;
+    }
+    .tab a {
+        color: black;
+    }
     .introwrapper {
         width: 90%;
         margin-left: 136px;
-        margin-top: 150px;
+        margin-top: 200px;
         font-size: 120px;
         line-height: 125px;
     }
@@ -131,8 +192,8 @@ a {
     }
     .ellipse1 {
         position: absolute;
-        display: block;
-        top: 585px;
+        display: flex;
+        top: 540px;
         margin-left: 0;
         stroke-dasharray: 630;
         stroke-dashoffset: 630;
@@ -142,7 +203,7 @@ a {
         position: absolute;
         display: block;
         left: 450px;
-        top: 600px;
+        top: 550px;
         stroke-dasharray: 980;
         stroke-dashoffset: 980;
         fill: none;
@@ -150,8 +211,8 @@ a {
     .ellipse3 {
         position: absolute;
         display: block;
-        top: 730px;
-        left: 70px;
+        top: 690px;
+        left: 100px;
         stroke-dasharray: 1860;
         stroke-dashoffset: 1860;
         fill: none;
@@ -173,7 +234,8 @@ a {
         display: flex;
         flex-direction: row;
         width: 100%;
-        height: 85%;
+        height: 75%;
+        overflow-y: hidden;
         margin-top: 80px;
     }
     .left-wrapper {
@@ -185,7 +247,7 @@ a {
         justify-content: center;
         overflow-y: auto;
         width: 50%;
-        height: 85%;
+        height: 100%;
     }
     .left-wrapper::-webkit-scrollbar { 
         width: 0;
@@ -196,7 +258,7 @@ a {
         top: 0;
         left: calc(50% - 0.5px);
         width: 1px;
-        height: 800px;
+        height: 900px;
         background-color: black;
     }
     .right-wrapper {
@@ -223,12 +285,44 @@ a {
         margin: 5rem;
     }
     /* usefulness page */
+    .main-wrapper {
+        display: flex;
+    }
+    .category {
+        margin-top: 15rem;
+        margin-left: 5rem;
+        width: 35%;
+        font-family: Erotique Alternate Trial;
+        font-style: normal;
+        font-size: 70px;
+        line-height: 69px;
+        color: #000000;
+    }
+    #useful:hover {
+        cursor: pointer;
+    }
+    #not-useful:hover {
+        cursor: pointer;
+    }
+    .usefulness-line {
+        height: 120vh;
+        width: 0px;
+        margin-left: 600px;
+        margin-top: -580px;
+        border: 1px solid #000000;
+    }
+    .image-wrapper {
+        position: absolute;
+        top: 10rem;
+        left: 40rem;
+        width: 60%;
+    }
     .item-img {
         position: absolute;
         top: 100px;
         left: 100px;
-        width: 181px;
-        height: 181px;
+        width: 150px;
+        height: 150px;
         border-radius: 50%;
     }
 }

@@ -54,13 +54,14 @@ function showItems() {
     console.log("showItems()");
     items.forEach((item) => {
 
-      function randomizePage() {
-        // getting img from airtable
+      // getting img from airtable
         // append them randomly on usefulness page
         var itemImg = document.createElement("img");
         itemImg.classList.add("item-img");
         itemImg.src = item.fields.circle_img[0].url;
-        document.querySelector(".container").appendChild(itemImg);
+        document.querySelector(".image-wrapper").appendChild(itemImg);
+      function randomizePage() {
+        
         // define variables for the window width and height
         var winWidth = window.innerWidth;
         var winHeight = window.innerHeight;
@@ -69,8 +70,8 @@ function showItems() {
         // i stands for "index". it's a variable you can name anything but we stick to the common name "i"
         for (var i = 0; i < randomElements.length; i++) {
           // get random number from top and left of window
-          var randomTop = getRandomNumber(0, winHeight);
-          var randomLeft = getRandomNumber(0, winWidth);
+          var randomTop = getRandomNumber(0, winHeight - randomElements[i].offsetHeight);
+        var randomLeft = getRandomNumber(0, winWidth - randomElements[i].offsetWidth);
           // update top and left position. we attach [i] after randomElements variable in your for loop
           randomElements[i].style.top = randomTop + "px";
           randomElements[i].style.left = randomLeft + "px";
@@ -82,5 +83,38 @@ function showItems() {
       function getRandomNumber(min, max) {
         return Math.random() * (max - min) + min;
       }
+
+      // define usefulness genre
+      var usefulness = item.fields.usefulness;
+      // define useful and not useful button
+      var useful = document.querySelector("#useful");
+      var notUseful = document.querySelector("#not-useful");
+
+      // click the useful button, 
+      // and item that is categorized as useful display
+      useful.addEventListener("click", function(){
+        if (usefulness === "useful"){
+          itemImg.style.display = "block";
+          notUseful.style.opacity = "0.4";
+        }
+        else {
+          itemImg.style.display = "none";
+          useful.style.opacity = "1";
+        }
+      });
+
+      // click the not useful button
+      // have not useful item display
+      notUseful.addEventListener("click", function(){
+        if (usefulness === "not_useful"){
+          itemImg.style.display = "block";
+          useful.style.opacity = "0.4";
+        }
+        else {
+          itemImg.style.display = "none";
+          notUseful.style.opacity = "1";
+        }
+      })
+
     });
   }

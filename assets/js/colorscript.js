@@ -54,14 +54,15 @@ function showItems() {
   console.log("showItems()");
   items.forEach((item) => {
 
-
-    function randomizePage() {
-      // getting img from airtable
+          // getting img from airtable
       // append them randomly on color home page
       var itemImg = document.createElement("img");
       itemImg.classList.add("item-img");
       itemImg.src = item.fields.circle_img[0].url;
-      document.querySelector(".container").appendChild(itemImg);
+      document.querySelector(".image-wrapper").appendChild(itemImg);
+
+    function randomizePage() {
+
       // define variables for the window width and height
       var winWidth = window.innerWidth;
       var winHeight = window.innerHeight;
@@ -87,20 +88,60 @@ function showItems() {
     // define color genre
     var itemColor = item.fields.color;
     // define color blob
-    var redBlob = docu.querySelector("#red");
-    var blueBlob = docu.querySelector("#blue");
-    var yellowBlob = docu.querySelector("#yellow");
-    var whiteBlob = docu.querySelector("#white");
-    var blackBlob = docu.querySelector("#black");
+    var redBlob = document.querySelector("#red");
+    var blueBlob = document.querySelector("#blue");
+    var yellowBlob = document.querySelector("#yellow");
+    var whiteBlob = document.querySelector("#white");
+    var blackBlob = document.querySelector("#black");
+
+    // define color text
+    showRedText = document.querySelector(".red-text");
+    showBlueText = document.querySelector(".blue-text");
+    showYellowText = document.querySelector(".yellow-text");
+    showWhiteText = document.querySelector(".white-text");
+    showBlackText = document.querySelector(".black-text");
+
+    // hover over the color blobs, and color texts show up
+    // mouse out, text disappear
+    redBlob.addEventListener("mouseover", function(){
+      showRedText.style.display = "block";
+    })
+    redBlob.addEventListener("mouseout", function(){
+      showRedText.style.display = "none";
+    })
+    blueBlob.addEventListener("mouseover", function(){
+      showBlueText.style.display = "block";
+    })
+    blueBlob.addEventListener("mouseout", function(){
+      showBlueText.style.display = "none";
+    })
+    yellowBlob.addEventListener("mouseover", function(){
+      showYellowText.style.display = "block";
+    })
+    yellowBlob.addEventListener("mouseout", function(){
+      showYellowText.style.display = "none";
+    })
+    whiteBlob.addEventListener("mouseover", function(){
+      showWhiteText.style.display = "block";
+    })
+    whiteBlob.addEventListener("mouseout", function(){
+      showWhiteText.style.display = "none";
+    })
+    blackBlob.addEventListener("mouseover", function(){
+      showBlackText.style.display = "block";
+    })
+    blackBlob.addEventListener("mouseout", function(){
+      showBlackText.style.display = "none";
+    })
+
+
 
     // click the red blob
     // if item is red, display on the page
-    redBlob.addEvemtListener("click", function(){
+    redBlob.addEventListener("click", function(){
       if (itemColor === "red") {
-        itemImg.src = item.fields.circle_img[0].url;
-        itemImg.classList.add("item-img");
         itemImg.style.display = "block";
-        document.querySelector(".container").appendChild(itemColor);
+        itemImg.style.opacity = "1";
       }
       else {
         itemImg.style.display = "none";
@@ -108,24 +149,21 @@ function showItems() {
     })
         // click the blue blob
     // if item is blue, display on the page
-    blueBlob.addEvemtListener("click", function(){
+    blueBlob.addEventListener("click", function(){
       if (itemColor === "blue") {
-        itemImg.src = item.fields.circle_img[0].url;
-        itemImg.classList.add("item-img");
         itemImg.style.display = "block";
-        document.querySelector(".container").appendChild(itemColor);}
+        itemImg.style.opacity = "1";
+      }
         else {
           itemImg.style.display = "none";
         }
     })
         // click the yellow blob
     // if item is yellow, display on the page
-    yellowBlob.addEvemtListener("click", function(){
+    yellowBlob.addEventListener("click", function(){
       if (itemColor === "yellow") {
-        itemImg.src = item.fields.circle_img[0].url;
-        itemImg.classList.add("item-img");
         itemImg.style.display = "block";
-        document.querySelector(".container").appendChild(itemColor);
+        itemImg.style.opacity = "1";
       }
       else {
         itemImg.style.display = "none";
@@ -133,12 +171,10 @@ function showItems() {
     })
         // click the white blob
     // if item is white, display on the page
-    whiteBlob.addEvemtListener("click", function(){
-      if (itemColor === "red") {
-        itemImg.src = item.fields.circle_img[0].url;
-        itemImg.classList.add("item-img");
+    whiteBlob.addEventListener("click", function(){
+      if (itemColor === "white") {
         itemImg.style.display = "block";
-        document.querySelector(".container").appendChild(itemColor);
+        itemImg.style.opacity = "1";
       }
       else {
         itemImg.style.display = "none";
@@ -146,16 +182,15 @@ function showItems() {
     })
         // click the black blob
     // if item is black, display on the page
-    blackBlob.addEvemtListener("click", function(){
-      if (itemColor === "red") {
-        itemImg.src = item.fields.circle_img[0].url;
-        itemImg.classList.add("item-img");
+    blackBlob.addEventListener("click", function(){
+      if (itemColor === "black") {
         itemImg.style.display = "block";
-        document.querySelector(".container").appendChild(itemColor);
+        itemImg.style.opacity = "1";
       }
       else {
         itemImg.style.display = "none";
       }
     })
+
   });
 }

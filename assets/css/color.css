@@ -15,6 +15,17 @@ body {
 a {
     text-decoration: none;
 }
+.tab {
+    font-family: Erotique Alternate Trial;
+    font-size: 20px;
+    text-align: right;
+    margin-top: 40px;
+    margin-right: 40px;
+    color: #E5E5E5;
+}
+.tab a {
+    color: #E5E5E5;
+}
 .container {
     width: 100%;
     height: 100%;
@@ -30,10 +41,103 @@ a {
     background-color: #E5E5E5;
     z-index: 99;
 }
-
+.red-text {
+    position: absolute;
+    font-family: "VisbyRoundCF";
+    font-size: 18px;
+    color: #722E2E;
+    top: 200px;
+    left: 80px;
+    z-index: 999;
+    transition: 1s ease;
+}
+#red {
+    width: 81px;
+    position: absolute;
+    left: 65px;
+    top: 180px;
+    z-index: 99;
+}
+.blue-text {
+    position: absolute;
+    font-family: "VisbyRoundCF";
+    font-size: 18px;
+    color: #35517C;
+    top: 470px;
+    left: 60px;
+    z-index: 999;
+    transition: 1s ease;
+}
+#blue {
+    width: 84px;
+    position: absolute;
+    left: 40px;
+    top: 450px;
+    z-index: 99;
+}
+.yellow-text {
+    position: absolute;
+    font-family: "VisbyRoundCF";
+    font-size: 18px;
+    color: #A8935D;
+    top: 580px;
+    left: 205px;
+    z-index: 999;
+    transition: 1s ease;
+}
+#yellow {
+    width: 70px;
+    position: absolute;
+    top: 550px;
+    left: 200px;
+    z-index: 99;
+}
+.white-text {
+    position: absolute;
+    font-family: "VisbyRoundCF";
+    font-size: 18px;
+    color: #E3E3E3;
+    top: 140px;
+    left: 220px;
+    z-index: 999;
+    transition: 1s ease;
+}
+#white {
+    width: 100px;
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    z-index: 99;
+}
+.black-text {
+    position: absolute;
+    font-family: "VisbyRoundCF";
+    font-size: 18px;
+    color: #5F5F5F;
+    top: 370px;
+    left: 240px;
+    z-index: 999;
+    transition: 1s ease;
+}
+#black {
+    width: 95px;
+    position: absolute;
+    top: 350px;
+    left: 220px;
+    z-index: 99;
+}
+.item-img {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    opacity: 0.5;
+}
 @media only screen and (min-width: 600px) {
     body {
-        cursor: url("./assets/img/cursor.svg"), auto;
+        cursor: url("/assets/img/cursor.svg"), auto;
     }
     .return {
         width: 45px;
@@ -41,38 +145,92 @@ a {
         margin-left: 50px;
         margin-top: 50px;
     }
+    .tab {
+        font-family: Erotique Alternate Trial;
+        font-size: 40px;
+        text-align: right;
+        margin-top: 80px;
+        margin-right: 50px;
+        color: #E5E5E5;
+    }
+    .tab a {
+        color: #E5E5E5;
+    }
+    .image-wrapper {
+        position: relative;
+        top: 3rem;
+    }
+    .red-text {
+        font-size: 36px;
+        top: 250px;
+        left: 190px;
+        display: none;
+    }
     #red {
-        position: absolute;
+        width: 178px;
         left: 141px;
         top: 200px;
-        z-index: 99;
+    }
+    #red:hover {
+        cursor: pointer;
+    }
+    .blue-text {
+        font-size: 36px;
+        top: 490px;
+        left: 470px;
+        display: none;
     }
     #blue {
-        position: absolute;
-        left: 438px;
-        top: 375px;
-        z-index: 99;
+        width: 183px;
+        left: 420px;
+        top: 450px;
+    }
+    #blue:hover {
+        cursor: pointer;
+    }
+    .yellow-text {
+        font-size: 36px;
+        top: 610px;
+        left: 835px;
+        display: none;
     }
     #yellow {
-        position: absolute;
-        top: 550px;
+        width: 154px;
+        top: 540px;
         left: 812px;
-        z-index: 99;
+    }
+    #yellow:hover {
+        cursor: pointer;
+    }
+    .white-text {
+        font-size: 36px;
+        top: 145px;
+        left: 680px;
+        display: none;
     }
     #white {
-        position: absolute;
+        width: 180px;
         top: 77px;
         left: 644px;
-        z-index: 99;
+    }
+    #white:hover {
+        cursor: pointer;
+    }
+    .black-text {
+        font-size: 36px;
+        top: 370px;
+        left: 1100px;
+        display: none;
     }
     #black {
-        position: absolute;
-        top: 300px;
+        width: 210px;
+        top: 320px;
         left: 1050px;
-        z-index: 99;
+    }
+    #black:hover {
+        cursor: pointer;
     }
     .item-img {
-        position: absolute;
         top: 100px;
         left: 100px;
         width: 181px;
