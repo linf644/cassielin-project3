@@ -20,7 +20,7 @@ a {
     font-size: 20px;
     text-align: right;
     margin-top: 40px;
-    margin-right: 40px;
+    margin-right: 1.5rem;
     color: #E5E5E5;
 }
 .tab a {
@@ -40,6 +40,10 @@ a {
     top: 30px;
     background-color: #E5E5E5;
     z-index: 99;
+}
+.image-wrapper {
+    position: relative;
+    top: 3rem;
 }
 .red-text {
     position: absolute;
@@ -155,6 +159,12 @@ a {
     }
     .tab a {
         color: #E5E5E5;
+    }
+    #size:hover a {
+        color: #FFE5B4;
+    }
+    #usefulness:hover a {
+        color: #FFE5B4;
     }
     .image-wrapper {
         position: relative;
